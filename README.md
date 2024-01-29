@@ -4,7 +4,7 @@
 ## 1일차
 - 개발환경 구축
    - 코딩 폰트 - 나눔고딕코딩
-   - NOtepad++ 설치
+   - Notepad++ 설치
    - Python 설치
    - Visual studio Code 설치
    - Git 설치
