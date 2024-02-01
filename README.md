@@ -205,6 +205,7 @@ for x in range(2, 10): # 2부터 9까지 반복
     - 주피터 노트북
         - Ctrl + Shift + P (명령 팔레트)로 시작
         - 사용방법 (test31_jupyternb.ipynb 참조)
+    - folium 기본사용
 
 
 
