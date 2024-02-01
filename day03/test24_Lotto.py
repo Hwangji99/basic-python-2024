@@ -1,5 +1,5 @@
 # date : 2024-01-31
-# file :test22_Lotto.py
+# file :test24_Lotto.py
 # desc : 로또번호 생성
 
 import random as rnd # 랜덤은 주로 rnd로 줄여서 많이 사용
