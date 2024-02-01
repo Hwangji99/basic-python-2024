@@ -96,6 +96,14 @@ for x in range(2, 10): # 2부터 9까지 반복
             return 0 # 아무것도 입력안하면 return None이 숨어있음
     ```
     - 텍스트 파일 입출력
+
+    ```python
+    f = open('파일명', mode='r│w│a', encoding='cp949│utf-8')
+    f.read()
+    f.readline() # 읽기
+    f.write('text') # 쓰기
+    f.close() # 파일은 반드시 닫는다
+    ```
 - 파이썬 활용
     - 주피터 노트북
 
