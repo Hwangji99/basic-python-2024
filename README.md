@@ -219,6 +219,7 @@ for x in range(2, 10): # 2부터 9까지 반복
     - JSON(JavaScript Object Notation) 입출력
     - 응용예제 연습
         - IP주소 확인 
+        - QR코드 만들기
 
 
 
