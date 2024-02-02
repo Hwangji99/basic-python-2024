@@ -208,6 +208,7 @@ for x in range(2, 10): # 2부터 9까지 반복
     - 이미지 올리는 방법
         - 깃허브에 올린 이미지의 주소를 복사해 새 링크를 열어 붙임
         - 새로 나온 페이지 주소를 다시 복사
+        - README.md에 ![제목](복사한 주소)
     - folium 기본사용
     ![folium사용법](https://raw.githubusercontent.com/Hwangji99/basic-python-2024/main/images/python_001.png)
 
