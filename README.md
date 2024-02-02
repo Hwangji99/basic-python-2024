@@ -216,7 +216,9 @@ for x in range(2, 10): # 2부터 9까지 반복
 - 파이썬 응용
     - 주피터 노트북 활용 - 구글 코랩(Colab)
     - folium 이어서
-    - JSON(JavaScript Object Notation) 입출력 
+    - JSON(JavaScript Object Notation) 입출력
+    - 응용예제 연습
+        - IP주소 확인 
 
 
 
