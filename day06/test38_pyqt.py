@@ -12,6 +12,25 @@ class qtwin_exam(QWidget):
     def __init__(self) -> None: 
         super().__init__()
         uic.loadUi('./day06/TestApp.ui', self)  # QtDesigner에서 만든 ui를 불러옴
+        # 버튼에 대한 시그널 처리
+        self.btnstart.clicked.connect(self.btnStartClicked) # ui 파일 내에 있는 위젯접근은 VSCode상에서 색상으로 표시되지 않음
+        self.btnstop.clicked.connect(self.btnStopClicked)
+
+    def btnStartClicked(self):
+        print('시작버튼 클릭')
+        self.lblstatus.setText('상태 : 동작시작')
+        QMessageBox.about(self, '동작', '시스템 가동~ 준비완료~')
+
+    def btnStopClicked(self):
+        print('종료버튼 클릭')
+        self.lblstatus.setText('상태 : 동작중지')
+
+    def closeEvent(self, QCloseEvent) -> None: # X버튼 종료확인
+        re = QMessageBox.question(self, '종료확인', '종료할꺼야?', QMessageBox.Yes|QMessageBox.No)
+        if re == QMessageBox.Yes: # 닫기
+            QCloseEvent.accept()
+        else:
+            QCloseEvent.ignore() # 무시
 
 if __name__ == '__main__':
     loop = QApplication(sys.argv) 
