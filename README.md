@@ -235,8 +235,31 @@ for x in range(2, 10): # 2부터 9까지 반복
     - QtDesigner 사용법
     - 스레드 학습 : UI 스레드와 Background 스레드 분리   ☆☆☆
         - GIL, 병렬프로세싱 더 학습할 것
-        
+
     ![스레드예제](https://raw.githubusercontent.com/Hwangji99/basic-python-2024/main/images/python_003.gif)
+
+    ```python
+    # 스레드 클래스에서 선언
+    class BackWorker(QThread): # PyQt에서 스레드 클래스 상속
+        initSignal = pyqtSignal(int) # 시그널을 UI스레드로 전달하기 위한 변수 객체
+        setSignal = pyqtSignal(int)
+
+        # ...
+
+        def run(self) -> None: # 스레드 실행 -> run
+        # 스레드로 동작할 내용
+        maxval = 1000001
+        self.initSignal.emit(maxval) # UI스레드로 보내기
+        # ...
+        class qtwin_exam(QWidget): # UI스레드
+            # ...
+            def btnStartClicked(self):
+                th = BackWorker(self)
+                th.start() # BackWorker 내의 self.run() 실행
+                # connect 부분이 중요!!
+                th.initSignal.connect(self.initPgbTask) # 스레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
+            # ...
+    ```
 
 
 

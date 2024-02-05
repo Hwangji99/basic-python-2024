@@ -14,6 +14,7 @@ class BackWorker(QThread): # PyQt에서 스레드 클래스 상속
     initSignal = pyqtSignal(int) # 시그널을 UI스레드로 전달하기 위한 변수 객체
     setSignal = pyqtSignal(int)
     setLog = pyqtSignal(str)
+
     def __init__(self, parent) -> None:
         super().__init__(parent) # 부모 스레드에 있는 초기화 사용
         self.parent = parent # BackWorker에서 사용할 멤버변수
@@ -41,6 +42,7 @@ class qtwin_exam(QWidget):
     def btnStartClicked(self):
         th = BackWorker(self)
         th.start() # BackWorker 내의 self.run() 실행
+        # connect 부분이 중요!!
         th.initSignal.connect(self.initPgbTask) # 스레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
         th.setSignal.connect(self.setPgbTask)
         th.setLog.connect(self.setTxbLog) # TextBrowser 위젯에 진행사항 출력
