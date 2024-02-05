@@ -251,13 +251,13 @@ for x in range(2, 10): # 2부터 9까지 반복
         maxval = 1000001
         self.initSignal.emit(maxval) # UI스레드로 보내기
         # ...
-        class qtwin_exam(QWidget): # UI스레드
-            # ...
-            def btnStartClicked(self):
-                th = BackWorker(self)
-                th.start() # BackWorker 내의 self.run() 실행
-                # connect 부분이 중요!!
-                th.initSignal.connect(self.initPgbTask) # 스레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
+    class qtwin_exam(QWidget): # UI스레드
+        # ...
+        def btnStartClicked(self):
+            th = BackWorker(self)
+            th.start() # BackWorker 내의 self.run() 실행
+            # connect 부분이 중요!!
+            th.initSignal.connect(self.initPgbTask) # 스레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
             # ...
 
         # 스레드에서 시그널이 넘어오면 UI처리를 대신 해주는 슬롯함수
