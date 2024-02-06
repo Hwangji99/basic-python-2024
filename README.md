@@ -234,7 +234,7 @@ for x in range(2, 10): # 2부터 9까지 반복
     - PyQt5 기본실행
     - QtDesigner 사용법
     - 스레드 학습 : UI 스레드와 Background 스레드 분리   ☆☆☆
-        - GIL, 병렬프로세싱 더 학습할 것
+        - [ ] GIL, 병렬프로세싱 더 학습할 것
 
     ![스레드예제](https://raw.githubusercontent.com/Hwangji99/basic-python-2024/main/images/python_003.gif)
 
