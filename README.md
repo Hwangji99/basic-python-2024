@@ -285,7 +285,17 @@ for x in range(2, 10): # 2부터 9까지 반복
                 QCloseEvent.ignore() # 무시
 
         ```
-        - 오버로딩(같은 이름의 함수를 여러개 활용, 매개변수는 다르게)
+        - 오버로딩(같은 이름의 함수를 마음대로 골라씀)
     - 가상환경
+        - 다른 버전 파이썬도 설치해야 사용 가능
+        - 현재 3.11에서 3.9 가상환경을 만들려면 3.9 파이썬 설치필요
         - cmd -> virtualenv install
     - PyQt5와 응용예제 연습
+        - 이미지 뷰어
+        - 이미지 에디터
+    ![PyQt예제](https://raw.githubusercontent.com/Hwangji99/basic-python-2024/main/images/python_004.png)
+
+## 8일차
+- 파이썬 응용
+    -PyQt5 응용예제 계속
+- 파이썬 기본 코딩테스트

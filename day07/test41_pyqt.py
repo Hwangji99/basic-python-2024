@@ -21,7 +21,10 @@ class WinApp(QWidget):
         lblImage.setPixmap(pixmap)
 
         lblSize = QLabel(self)
+        lblSize.setFont(QFont('NanumGothicCoding', 20)) # 폰트와 폰트사이즈
+        lblSize.setStyleSheet('Color : blue;')
         lblSize.setText(f'{pixmap.width()} X {pixmap.height()}') # 사진의 width x height
+        lblSize.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter) # 가로중앙정렬 | 세로중앙정렬
 
         vbox = QVBoxLayout(self) # QtDesigner VerticalLayout 위젯 생성
         vbox.addWidget(lblImage) # VL에 위젯 추가
@@ -32,7 +35,9 @@ class WinApp(QWidget):
     
         self.setWindowIcon(QIcon('./images/iot.png')) # 실행 시 좌측 상단에 나오는 아이콘
         self.setWindowTitle('이미지 뷰어')
-        self.setGeometry(300, 300, 300, 300)
+        rect = QRect(300, 300, 300, 300) # x, y, w, h
+        self.setGeometry(rect) # 같은 이름의 함수를 여러 개 선언해놓고 원하는 것을 골라쓰는 BR(오버로딩)
+        # self.setGeometry(300, 300, 300, 300)
         self.setCenter()
         self.show()                 # showFullScreen()는 모니터를 꽉 채워서 출력
     
@@ -44,7 +49,7 @@ class WinApp(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    screen_rect = app.desktop().screenGeometry()
+    screen_rect = app.desktop().screenGeometry() # 모니터 해상도 구하는 법
     width, height = screen_rect.width(), screen_rect.height()
     print(width, 'x', height) # 활용도 높음
     ins = WinApp()
