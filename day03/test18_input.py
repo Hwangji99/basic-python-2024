@@ -6,7 +6,7 @@
 # 1. 두 수를 받을 때 가장 원시적인 방법
 # input_a, input_b = input('값을 2개 입력 (공백으로 구분) -> ').split(' ')
 # input_a = int(input_a)
-# input_b = unt(input_b)
+# input_b = int(input_b)
 
 # 2. map() 함수 사용, 더 많이 사용
 input_a, input_b = map(int, input('값을 2개 입력 (공백으로 구분) -> ').split(' '))
